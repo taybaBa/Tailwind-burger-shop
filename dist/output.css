@@ -688,6 +688,14 @@ section{
   margin-left: 1rem;
 }
 
+.ml-auto{
+  margin-left: auto;
+}
+
+.block{
+  display: block;
+}
+
 .flex{
   display: flex;
 }
@@ -700,8 +708,20 @@ section{
   display: none;
 }
 
+.h-12{
+  height: 3rem;
+}
+
 .h-14{
   height: 3.5rem;
+}
+
+.h-56{
+  height: 14rem;
+}
+
+.w-12{
+  width: 3rem;
 }
 
 .w-28{
@@ -718,6 +738,10 @@ section{
 
 .w-full{
   width: 100%;
+}
+
+.max-w-md{
+  max-width: 28rem;
 }
 
 .flex-1{
@@ -746,12 +770,24 @@ section{
   cursor: pointer;
 }
 
+.grid-cols-1{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
 .grid-cols-2{
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col{
   flex-direction: column;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.place-items-center{
+  place-items: center;
 }
 
 .items-center{
@@ -768,6 +804,10 @@ section{
 
 .gap-10{
   gap: 2.5rem;
+}
+
+.gap-3{
+  gap: 0.75rem;
 }
 
 .gap-4{
@@ -794,6 +834,14 @@ section{
   overflow: hidden;
 }
 
+.rounded-3xl{
+  border-radius: 1.5rem;
+}
+
+.rounded-full{
+  border-radius: 9999px;
+}
+
 .rounded-lg{
   border-radius: 0.5rem;
 }
@@ -817,6 +865,11 @@ section{
   background-color: rgb(1 10 94 / var(--tw-bg-opacity));
 }
 
+.bg-primaryColorLight{
+  --tw-bg-opacity: 1;
+  background-color: rgb(1 13 120 / var(--tw-bg-opacity));
+}
+
 .bg-redColor{
   --tw-bg-opacity: 1;
   background-color: rgb(204 52 51 / var(--tw-bg-opacity));
@@ -831,6 +884,10 @@ section{
   padding: 1.25rem;
 }
 
+.p-6{
+  padding: 1.5rem;
+}
+
 .py-10{
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -839,6 +896,11 @@ section{
 .py-14{
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
+}
+
+.py-20{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .py-3{
@@ -915,6 +977,10 @@ section{
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
+.ease-linear{
+  transition-timing-function: linear;
+}
+
 .home__title,
     .card__title,
     .section__title{
@@ -960,6 +1026,20 @@ section{
   color: rgb(192 192 192 / var(--tw-text-opacity));
 }
 
+.tabs_wrap ul li:hover,
+ .tabs_wrap ul li:active{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 204 0 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.hover\:scale-110:hover{
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 @keyframes move{
   50%{
     transform: translateY(-1rem);
@@ -968,6 +1048,11 @@ section{
 
 .hover\:animate-movingY:hover{
   animation: move 2s linear infinite;
+}
+
+.hover\:bg-secondaryColor:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 204 0 / var(--tw-bg-opacity));
 }
 
 .hover\:text-secondaryColor:hover{
@@ -1002,6 +1087,10 @@ section{
     display: none;
   }
 
+  .md\:w-48{
+    width: 12rem;
+  }
+
   .md\:w-auto{
     width: auto;
   }
@@ -1016,6 +1105,10 @@ section{
 
   .md\:basis-1\/2{
     flex-basis: 50%;
+  }
+
+  .md\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:flex-row{
@@ -1044,6 +1137,14 @@ section{
 }
 
 @media (min-width: 1024px){
+  .lg\:h-40{
+    height: 10rem;
+  }
+
+  .lg\:w-24{
+    width: 6rem;
+  }
+
   .lg\:flex-1{
     flex: 1 1 0%;
   }
@@ -1056,6 +1157,10 @@ section{
     flex-basis: 60%;
   }
 
+  .lg\:grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }
@@ -1066,5 +1171,9 @@ section{
 
   .lg\:gap-10{
     gap: 2.5rem;
+  }
+
+  .lg\:gap-12{
+    gap: 3rem;
   }
 }
