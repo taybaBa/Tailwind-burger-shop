@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="src/input.css" rel="stylesheet">
     <link href="dist/output.css" rel="stylesheet">
-
+    <script src="https://unpkg.com/scrollreveal"></script>
     <!--favicon---->
     <link rel="shortcut icon" href="src/img/favicon.png" type="img/x-icon">
 
@@ -21,28 +21,28 @@
     <title>responsive || tayba shop</title>
 </head>
 <body>
-    <header class="bg-primaryColor fixed top-0 left-0 w-full z-50 ">
+    <header class="bg-primaryColor dark:bg-darkColor fixed top-0 left-0 w-full z-50" id="header">
       <nav class="container relative h-14 flex justify-between items-center">
        <div>
         <a href="#" class="text-2xl uppercase font-oswald">Bur<span class="text-secondaryColor">ger</span></a>
        </div>
-       <div class="hidden absolute top-0 left-0 w-full py-14 bg-primaryColor border-b border-secondaryColor md:block md:static md:border-none md:w-auto md:ml-auto md:flex-row" id="nav-menu">
+       <div class="hidden absolute top-0 left-0 w-full py-14 bg-primaryColor dark:bg-darkColor border-b border-secondaryColor md:block md:static md:py-0 md:border-none md:w-auto md:ml-auto" id="nav-menu">
         <ul class="flex flex-col text-center gap-5 md:flex-row">
           <li>
-            <a href="#home" class="nav__link hover:text-secondaryColor ease-in duration-200">Home</a>
+            <a href="#home" class="nav__link text-secondaryColor hover:text-secondaryColor ease-in duration-200">Home</a>
           </li>
           <li>
             <a href="#about"  class="nav__link hover:text-secondaryColor ease-in duration-200">About Us</a>
           </li>
           <li>
-            <a href="#menu" class="nav__link hover:text-secondaryColor ease-in duration-200"></a>
+            <a href="#menu" class="nav__link hover:text-secondaryColor ease-in duration-200">Menu</a>
           </li>
 
           <li>
-            <a href="#review" class="nav__link hover:text-secondaryColor ease-in duration-200">Menu</a>
+            <a href="#review" class="nav__link hover:text-secondaryColor ease-in duration-200">Review</a>
           </li>
           <li>
-            <a href="#contact" class="nav__link hover:text-secondaryColor ease-in duration-200">Review</a>
+            <a href="#contact" class="nav__link hover:text-secondaryColor ease-in duration-200">Contact</a>
           </li>
         </ul>
         <div class="absolute top-[0.7rem] right-4 text-2xl cursor-pointer md:hidden">
@@ -50,7 +50,7 @@
         </div>
        </div>
        <div class="flex items-center gap-5">
-        <i class="ri-moon-line cursor-pointer ml-2 text-xl"></i>
+        <i class="ri-moon-line cursor-pointer ml-2 text-xl" id="theme-toggle"></i>
        </div>
        <div class="md:hidden" id="hamburger">
         <i class="ri-menu-2-line cursor-pointer ml-4 text-xl"></i>
@@ -61,9 +61,9 @@
   <section id="home">
     <div class="container flex flex-col items-center gap-10 md:flex-row">
       <div class="mx-auto md:basis-1/2 lg:basis-2/5 animate-movingY">
-        <img src="src/img/home-image.png" alt="home image" class="w-60 md:w-full">
+        <img src="src/img/home-image.png" alt="home image" class="home__image w-60 md:w-full">
       </div>
-      <div class="text-center md:basis-1/2 md:text-start lg:basis-3/5">
+      <div class="text-center home__content md:basis-1/2 md:text-start lg:basis-3/5">
         <h1 class="home__title">HAPPY TUMMY WITH TASTY BURGERS.</h1>
         <div class="separator mx-auto md:mx-auto"></div>
         <p class="paragraph">
@@ -101,7 +101,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
 <section id="category">
   <div class="container flex flex-col gap-5 md:flex-row">
     <!--card 1 -->
-    <div class="bg-secondaryColor flex py-3 rounded-lg overflow-hidden md:flex-1">
+    <div class="bg-secondaryColor category__card flex py-3 rounded-lg overflow-hidden md:flex-1">
       <div class="basis-1/3 relative">
         <img src="./src/img/burger-1.png" alt="cateogory image" class="absolute w-28 -bottom-4 -left-4">
       </div>
@@ -115,7 +115,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
     </div>
 
       <!--card 2 -->
-      <div class="bg-redColor flex py-3 rounded-lg overflow-hidden md:flex-1">
+      <div class="bg-redColor category__card flex py-3 rounded-lg overflow-hidden md:flex-1">
         <div class="basis-1/3 relative">
           <img src="./src/img/snack-1.png" alt="cateogory image" class="absolute w-28 -bottom-4 -left-4">
         </div>
@@ -129,7 +129,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
       </div>
 
         <!--card 3 -->
-    <div class="bg-greenColor flex py-3 rounded-lg overflow-hidden md:flex-1">
+    <div class="bg-greenColor category__card flex py-3 rounded-lg overflow-hidden md:flex-1">
       <div class="basis-1/3 relative">
         <img src="./src/img/beverage-2.png" alt="cateogory image" class="absolute w-28 -bottom-4 -left-4">
       </div>
@@ -149,7 +149,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
 <section id="promo">
 <div class="container flex flex-col gap-5 lg:gap-10 lg:flex-row">
   <!-- card 1-->
-   <div class="bg-primaryColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1">
+   <div class="bg-primaryColorLight promo__card-1 dark:bg-darkColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1">
     <img src="./src/img/promo-1.png" alt="promo img" class="w-40 mx-auto hover:animate-movingY md:mx-5">
     <div class="space-y-2 pt-5 md:pt-0">
       <p class="text-xs text-secondaryColor">Payday promo</p>
@@ -161,7 +161,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
    </div>
 
    <!-- card 2-->
-   <div class="bg-primaryColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1">
+   <div class="bg-primaryColorLight promo__card-2 dark:bg-darkColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1">
     <img src="./src/img/promo-2.png" alt="promo img" class="w-40 mx-auto hover:animate-movingY md:mx-5">
     <div class="space-y-2 pt-5 md:pt-0">
       <p class="text-xs text-secondaryColor">Payday promo</p>
@@ -179,11 +179,11 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
 <section id="about" >
 <div class="container flex flex-col gap-10 md:flex-row">
   <div class="flex-1">
-    <img src="./src/img/about.jpg" alt="about" class="rounded-lg">
+    <img src="./src/img/about.jpg" alt="about" class="rounded-lg about__img">
   </div>
-  <div class="flex-1">
+  <div class="about__content flex-1">
     <h2 class="section__title">FIND FOOD AND DRINKS, ALL-IN-ONE PLACE FOR YOUR BEST TASTE.</h2>
-    <div class="separotor"></div>
+    <div class="separator"></div>
     <p class="paragraph">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
       Aenean commodo ligula eget dolor. Aenean massa. 
       Cum sociis natoque penatibus et magnis dis parturient montes.
@@ -200,7 +200,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
 </section>
 
 <!----Menu Section ---->
-<section id ="menu">
+<section id="menu">
 <div class="container">
   <div class="max-w-md mx-auto text-center">
     <h2 class="section__title">OUR BEST MENU</h2>
@@ -210,19 +210,19 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
       </p>
     <div class="tabs_wrap">
       <ul class="flex flex-wrap justify-center gap-3 py-10">
-        <li data-tabs="all" class="btn bg-primaryColorLight active">All</li>
-        <li data-tabs="food" class="btn bg-primaryColorLight">Food</li>
-        <li data-tabs="snack" class="btn bg-primaryColorLight">Snack</li>
-        <li data-tabs="beverage" class="btn bg-primaryColorLight">Beverage</li>
+        <li data-tabs="all" class="btn bg-primaryColorLight dark:bg-darkColorLight active">All</li>
+        <li data-tabs="food" class="btn bg-primaryColorLight dark:bg-darkColorLight">Food</li>
+        <li data-tabs="snack" class="btn bg-primaryColorLight dark:bg-darkColorLight">Snack</li>
+        <li data-tabs="beverage" class="btn bg-primaryColorLight dark:bg-darkColorLight">Beverage</li>
       </ul>
     </div>
   </div>
 
-<div>
+<div class="menu__items">
   <ul class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
     <!---food-->
     <li class="item_wrap food">
-      <div class="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+      <div class="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
         <img src="./src/img/burger-1.png" alt="food image" class="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24">
       </div>
       <div class="pt-5">
@@ -235,7 +235,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
     </li>
      <!---burger2-->
      <li class="item_wrap food">
-      <div class="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+      <div class="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
         <img src="./src/img/burger-2.png" alt="food image" class="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24">
       </div>
       <div class="pt-5">
@@ -248,7 +248,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
     </li>
     <!---food3-->
     <li class="item_wrap food">
-      <div class="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+      <div class="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
         <img src="./src/img/burger-3.png" alt="food image" class="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24">
       </div>
       <div class="pt-5">
@@ -261,7 +261,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
     </li>
     <!---food4-->
     <li class="item_wrap food">
-      <div class="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+      <div class="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
         <img src="./src/img/burger-4.png" alt="food image" class="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24">
       </div>
       <div class="pt-5">
@@ -274,7 +274,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
     </li>
     <!---food5-->
     <li class="item_wrap food">
-      <div class="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+      <div class="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
         <img src="./src/img/burger-5.png" alt="food image" class="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24">
       </div>
       <div class="pt-5">
@@ -288,7 +288,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
 
     <!------Snack items tabs-->
       <li class="item_wrap snack">
-      <div class="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+      <div class="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
         <img src="./src/img/snack-1.png" alt="food image" class="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24">
       </div>
       <div class="pt-5">
@@ -300,7 +300,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
       </div>
     </li>
     <li class="item_wrap snack">
-      <div class="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+      <div class="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
         <img src="./src/img/snack-2.png" alt="food image" class="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24">
       </div>
       <div class="pt-5">
@@ -312,7 +312,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
       </div>
     </li>
     <li class="item_wrap snack">
-      <div class="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+      <div class="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
         <img src="./src/img/snack-3.png" alt="food image" class="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24">
       </div>
       <div class="pt-5">
@@ -324,7 +324,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
       </div>
     </li>
     <li class="item_wrap snack">
-      <div class="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+      <div class="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
         <img src="./src/img/snack-4.png" alt="food image" class="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24">
       </div>
       <div class="pt-5">
@@ -336,7 +336,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
       </div>
     </li>
     <li class="item_wrap snack">
-      <div class="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+      <div class="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
         <img src="./src/img/snack-5.png" alt="food image" class="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24">
       </div>
       <div class="pt-5">
@@ -348,7 +348,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
       </div>
     </li>
     <li class="item_wrap snack">
-      <div class="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+      <div class="h-56 grid place-items-center bg-primaryColorLight  dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
         <img src="./src/img/snack-6.png" alt="food image" class="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24">
       </div>
       <div class="pt-5">
@@ -362,7 +362,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
 
      <!------beverge items tabs-->
      <li class="item_wrap beverage">
-      <div class="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+      <div class="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
         <img src="./src/img/beverage-1.png" alt="food image" class="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24">
       </div>
       <div class="pt-5">
@@ -374,7 +374,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
       </div>
     </li>
     <li class="item_wrap beverage">
-      <div class="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+      <div class="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
         <img src="./src/img/beverage-2.png" alt="food image" class="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24">
       </div>
       <div class="pt-5">
@@ -386,7 +386,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
       </div>
     </li>
     <li class="item_wrap beverage">
-      <div class="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+      <div class="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
         <img src="./src/img/beverage-3.png" alt="food image" class="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24">
       </div>
       <div class="pt-5">
@@ -398,7 +398,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
       </div>
     </li>
     <li class="item_wrap beverage">
-      <div class="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+      <div class="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
         <img src="./src/img/beverage-4.png" alt="food image" class="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24">
       </div>
       <div class="pt-5">
@@ -410,7 +410,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
       </div>
     </li>
     <li class="item_wrap beverage">
-      <div class="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+      <div class="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
         <img src="./src/img/beverage-5.png" alt="food image" class="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24">
       </div>
       <div class="pt-5">
@@ -427,8 +427,8 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
 </section>
 
 <!----Review Section-->
-<section id="review" class="bg-primaryColorLight py-20">
-  <div class="container">
+<section id="review" class="bg-primaryColorLight dark:bg-darkColorLight py-20">
+  <div class="customer__review container">
     <div class="max-w-md mx-auto text-center">
       <h2 class="section__title">CUSTOMER REVIEW</h2>
       <div class="separator mx-auto"></div>
@@ -439,7 +439,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
    <div class="swiper py-10">
     <ul class="swiper-wrapper">
       <li class="swiper-slide">
-        <div class="flex flex-col gap-5 bg-primaryColor rounded-lg p-6">
+        <div class="flex flex-col gap-5 bg-primaryColor dark:bg-darkColor rounded-lg p-6">
           <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet facere tempora ea, consectetur nisi culpa natus dolore.</p>
           <div class="flex items-center">
             <img src="./src/img/review-1.jpg" alt="review img" class="w-12 h-12 rounded-full">
@@ -452,7 +452,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
         </div>
       </li>
       <li class="swiper-slide">
-        <div class="flex flex-col gap-5 bg-primaryColor rounded-lg p-6">
+        <div class="flex flex-col gap-5 bg-primaryColor dark:bg-darkColor rounded-lg p-6">
           <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet facere tempora ea, consectetur nisi culpa natus dolore.</p>
           <div class="flex items-center">
             <img src="./src/img/review-2.jpg" alt="review img" class="w-12 h-12 rounded-full">
@@ -465,7 +465,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
         </div>
       </li>
       <li class="swiper-slide">
-        <div class="flex flex-col gap-5 bg-primaryColor rounded-lg p-6">
+        <div class="flex flex-col gap-5 bg-primaryColor dark:bg-darkColor rounded-lg p-6">
           <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet facere tempora ea, consectetur nisi culpa natus dolore.</p>
           <div class="flex items-center">
             <img src="./src/img/review-3.jpg" alt="review img" class="w-12 h-12 rounded-full">
@@ -478,7 +478,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
         </div>
       </li>
       <li class="swiper-slide">
-        <div class="flex flex-col gap-5 bg-primaryColor rounded-lg p-6">
+        <div class="flex flex-col gap-5 bg-primaryColor dark:bg-darkColor rounded-lg p-6">
           <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet facere tempora ea, consectetur nisi culpa natus dolore.</p>
           <div class="flex items-center">
             <img src="./src/img/review-3.jpg" alt="review img" class="w-12 h-12 rounded-full">
@@ -491,7 +491,7 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
         </div>
       </li>
       <li class="swiper-slide">
-        <div class="flex flex-col gap-5 bg-primaryColor rounded-lg p-6">
+        <div class="flex flex-col gap-5 bg-primaryColor dark:bg-darkColor rounded-lg p-6">
           <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet facere tempora ea, consectetur nisi culpa natus dolore.</p>
           <div class="flex items-center">
             <img src="./src/img/review-4.jpg" alt="review img" class="w-12 h-12 rounded-full">
@@ -508,6 +508,90 @@ fugit saepe sunt unde culpa? Tenetur quos quod laudantium.
    </div>
   </div>
 </section>
+
+<!----contact Section-->
+<section id="contact" class="bg-secondaryColor py-16">
+<div class="container flex flex-col gap-5 md:items-center md:flex-row">
+  <div class="space-y-4 md:flex-1">
+    <h2 class="section__title text-blackColor">GET EXCLUSIVE UPDATE</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+  <div class="flex flex-col gap-3 md:flex-row md:flex-1">
+    <input type="email" placeholder="Email address" class="p-2 text-blackColor rounded-lg outline-none md:w-full">
+   <a href="" class="flex items-center justify-center gap-2 btn btn-bg-black hover:opacity-75"><i class="fa-solid fa-paper-plane"></i>Subscribe</a>
+  </div>
+</div>
+
+</section>
+
+<!----Footer Section-->
+<section class="footer">
+<div class="container">
+  <ul class="grid grid-cols-1 items-start gap-5 pb-5 md-grid-cols-2 lg:grid-cols-4">
+    <li>
+      <div class="space-y-3">
+        <a href="#" class="text-4xl font-oswald uppercase">Bur<span class="text-secondaryColor">ger</span></a>
+        <p class="text-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          </p>
+      </div>
+    </li>
+    <li>
+      <div class="flex flex-col gap-3">
+        <h3 class="text-lg uppercase font-oswald">SUPPORT</h3>
+        <a href="" class="text-xs hover:text-secondaryColor">FAQ's</a>
+        <a href="" class="text-xs hover:text-secondaryColor">Privacy Policy </a>
+        <a href="" class="text-xs hover:text-secondaryColor">Term & Condition</a>
+        <a href="" class="text-xs hover:text-secondaryColor">Contact</a>
+      </div>
+    </li>
+    <li class="space-y-8">
+      <div class="space-y-2">
+        <h3 class="text-lg uppercase font-oswald">phone</h3>
+        <p class="flex items-center gap-2 text-xs">
+          <i class="fa-solid fa-phone text-lg text-secondaryColor"></i>
+          +1 000 000 0000
+        </p>
+      </div>
+
+      <div class="space-y-2">
+        <h3 class="text-lg uppercase font-oswald">email</h3>
+        <p class="flex items-center gap-2 text-xs">
+          <i class="fa-solid fa-envelope text-lg text-secondaryColor"></i>
+          burger.info@email.com
+        </p>
+      </div>
+    </li>
+    <li class="space-y-8">
+      <div class="space-y-2">
+        <h3 class="text-lg uppercase font-oswald">ADDRESS</h3>
+        <p class="flex items-center gap-2 text-xs">
+          <i class="fa-solid fa-location-dot text-lg cursor-pointer text-secondaryColor hover:-translate-y-1 ease-in duration-200"></i>
+          Address goes here
+        </p>
+      </div>
+
+      <div class="space-y-2">
+        <h3 class="text-lg uppercase font-oswald">FOLLOW US</h3>
+         <div class="space-x-3">
+          <i class="fa-brands fa-facebook-f text-lg cursor-pointer text-secondaryColor hover:-translate-y-1 ease-in duration-200 "></i>
+<i class="fa-brands fa-twitter text-lg cursor-pointer text-secondaryColor hover:-translate-y-1 ease-in duration-200"></i>
+<i class="fa-brands fa-square-instagram text-lg cursor-pointer text-secondaryColor hover:-translate-y-1 ease-in duration-200"></i>
+         </div>
+      </div>
+    </li>
+  </ul>
+  <div class="flex flex-col items-center border-t border-primaryColorLight dark:border-darkColorLight py-5 md:flex-row md:justify-between">
+    <p class="paragrapgh">Burger Template kit by Tayyba</p>
+    <p class="paragrapgh">Copyright © 2024.All rights reserved.</p>
+  </div>
+</div>
+</section>
+
+<!----Scoll up button -->
+<a href="#" class="fixed right-4 -bottom-1/2 bg-secondaryColor shadow-sm inline-block px-4 py-2 rounded-full text-lg text-blackColor z-50 hover:-translate-y-1 ease-in duration-200" id="scroll-up">
+  <i class="fa-solid fa-arrow-up"></i>
+</a>
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> 
     <script>
